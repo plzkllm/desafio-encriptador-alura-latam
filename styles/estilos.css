@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 :root{
     --dark-blue-300:#0A3871;
+    --inter-family:"Inter", sans-serif;
+    --gray-500:#343A40;
 }
 
 *{
@@ -36,7 +40,7 @@ body{
     border: transparent;
     background-color: transparent;
     width: 680px;
-    height: 580px;
+    height: 500px;
 }
 
 .seccion_central_txtarea::placeholder{
@@ -47,8 +51,74 @@ body{
 .seccion_central_instrucciones{
     display: flex;
     gap: 8px;
+    padding-bottom: 16px;
+}
+
+.seccion_central_contenedor_btn{
+   
+    display: flex;
+    gap: 24px;
+}
+
+.seccion_central_btn_encriptar{
+    width: 328px;
+    height: 67px;
+    border-radius: 24px;
+    color: white;
+    background-color: var(--dark-blue-300);
+    cursor: pointer;
+}
+
+.seccion_central_btn_desencriptar{
+    width: 328px;
+    height: 67px;
+    border-radius: 24px;
+    color: var(--dark-blue-300);
+    background-color: transparent;
+    
 }
 
 .seccion_derecha{
-    background-color: skyblue;
+    background-color: white;
+    width: 400px;
+    height: 800px;
+    border-radius: 32px;
+}
+
+.seccion_derecha_vacia{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    text-align: center;
+}
+
+.seccion_derecha_vacia_contenedor_texto{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 32px;
+}
+
+.seccion_derecha_vacia_muñeco{
+    width: 336px;
+    height: 304px;
+}
+
+.seccion_derecha_vacia_subtitulo{
+    font-size: 24px;
+    font-weight: bold;
+    font-family: var(--inter-family);
+    color: var(--gray-500);
+}
+
+.seccion_derecha_vacia_descripcion{
+    font-size: 16px;
+    font-family: var(--inter-family);
+}
+
+.seccion_derecha_contenido{
+    display: none;
 }
