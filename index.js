@@ -7,6 +7,8 @@ const btnCopiar= document.querySelector(".seccion_derecha_btn_copiar")
 
 const txtAreaEncriptacion = document.querySelector(".seccion_central_txtarea");
 
+const seccion_vacia=document.querySelector(".seccion_derecha_vacia");
+const seccion_contenido=document.querySelector(".seccion_derecha_contenido");
 
 
 const etiquetaTexto = document.querySelector(
@@ -16,9 +18,14 @@ const etiquetaTexto = document.querySelector(
 const restricciones = (event) => {
   let caracter = event.key;
 
-  if (event.key.length > 1) {
+  const caracterEspecialRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?´°]/;
+
+  const acentosRegex = /[áéíóúüÁÉÍÓÚÜ]/
+
+  if (event.key.length > 2) {
     return;
-}
+    }
+
   if (
     (caracter >= "0" && caracter <= "9")
   ) {
@@ -26,17 +33,38 @@ const restricciones = (event) => {
     return;
   }
 
+  if (caracterEspecialRegex.test(caracter)) {
+    event.preventDefault(); 
+    return; 
+    }
+
+  if (acentosRegex.test(caracter)) {
+        event.preventDefault(); 
+        return; 
+    }
+
   if(caracter >= "A" && caracter <= "Z"){
     event.preventDefault();
     txtAreaEncriptacion.value+= caracter.toLowerCase()
     return;
   }
 
+
+
 };
+
+const modificacionPantalla = () => {
+    if(txtAreaEncriptacion.value==""){
+        seccion_vacia.style.display="flex";
+        seccion_contenido.style.display="none";
+    } else{
+        seccion_vacia.style.display="none";
+        seccion_contenido.style.display="flex";
+    }
+}
 
 const encriptar = () => {
   let texto = txtAreaEncriptacion.value;
-  let textoEncriptado = "";
 
   let arrTexto = texto.split("");
   let newArrTexto = [];
@@ -85,9 +113,11 @@ const copiarTexto = () => {
     alert("Texto copiado")
 };
 
-btnEncriptar.addEventListener("click", encriptar);
-btnDesencriptar.addEventListener("click", desencriptar);
+btnEncriptar.addEventListener("click", ()=>{encriptar(); modificacionPantalla();});
+btnDesencriptar.addEventListener("click", ()=>{desencriptar(); modificacionPantalla();});
 btnCopiar.addEventListener("click", copiarTexto)
 txtAreaEncriptacion.addEventListener("keydown", (e) => {
   restricciones(e);
 });
+
+modificacionPantalla();
