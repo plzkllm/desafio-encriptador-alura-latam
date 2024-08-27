@@ -26,7 +26,7 @@ body{
 
 .seccion_izquierda{
     padding-top: 40px;
-    max-width: 120px;
+    width: 120px;
     /* border-left: 1px solid;
     border-right: 1px solid; */
     height: 100vh;
@@ -151,4 +151,79 @@ body{
     color: var(--dark-blue-300);
     background-color: transparent;
     cursor: pointer;
+}
+
+@media(max-width:768px){
+    .contenedor_principal{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .seccion_izquierda{
+        padding: 5% 0;
+        width: 100%;
+        height: auto;
+    }
+
+    .seccion_central{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        /* justify-content: center; */
+        padding: 0;
+        width: 100%;
+        height: auto;
+        
+    }
+
+    .seccion_central_txtarea{
+        width: 75%;
+    }
+
+    .seccion_central_instrucciones{
+        padding-left: 10%;
+        width: 100%;
+    }
+
+    .seccion_central_contenedor_btn{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+    }
+
+    .seccion_central_btn_desencriptar{
+        width: 45%;
+    }
+
+    .seccion_central_btn_encriptar{
+        width: 45%;
+    }
+
+    .seccion_derecha{
+        padding:10% 0;
+        justify-content: center;
+        width: 95%;
+        height: auto;
+    }
+
+    .seccion_derecha_vacia_muñeco{
+        display: none;
+    }
+}
+
+@media(max-width:376px){
+    .seccion_central_contenedor_btn{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .seccion_central_btn_desencriptar{
+        width: 90%;
+    }
+
+    .seccion_central_btn_encriptar{
+        width: 90%;
+    }
 }
