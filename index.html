@@ -7,11 +7,13 @@
     <link rel="stylesheet" href="./styles/estilos.css">
 </head>
 <body>
+    <main class="contenedor_principal">
     <section class="seccion_izquierda">
-        <img src="" alt="">
+        <img src="./assets/Logo.png" alt="Logo_alura_Latam">
     </section>
     <section class="seccion_central">
-        <textarea name="txtarea" id="" placeholder="Ingrese el texto aqui"></textarea>
+        <textarea class="seccion_central_txtarea" name="txtarea" id="" placeholder="Ingrese el texto aqui"></textarea>
+        <div class="seccion_central_instrucciones"><img src="./assets/bi_exclamation-circle-fill.png" alt=""><p>Solo letras minúsculas y sin acentos</p></div>
         <div class="seccion_central_contenedor_btn">
             <button class="seccion_central_btn_encriptar">Encriptar</button>
             <button class="seccion_central_btn_desencriptar">Desencriptar</button>
@@ -19,7 +21,7 @@
     </section>
     <section class="seccion_derecha">
         <div class="seccion_derecha_vacia">
-            <img src="" alt="">
+            <img src="./assets/Muñeco.png" alt="Muñeco_Buscando">
             <h2>Ningun texto fue encontrado</h2>
             <p>Ingresa el texto que deseas encriptar</p>
         </div>
@@ -28,6 +30,7 @@
             <button>Copiar</button>
         </div>
     </section>
+    </main>
 </body>
 <script src="./index.js"></script>
 </html>

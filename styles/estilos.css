@@ -1,0 +1,54 @@
+:root{
+    --dark-blue-300:#0A3871;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #F3F5FC;
+}
+
+.contenedor_principal{
+    display: flex;
+    justify-content: space-around;
+    gap: 80px;
+}
+
+.seccion_izquierda{
+    padding-top: 40px;
+    max-width: 120px;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    height: 100vh;
+    background-color: red;
+}
+
+.seccion_central{
+    background-color: yellow;
+    padding-top: 120px;
+}
+
+.seccion_central_txtarea{ 
+    border: transparent;
+    background-color: transparent;
+    width: 680px;
+    height: 580px;
+}
+
+.seccion_central_txtarea::placeholder{
+    color: var(--dark-blue-300);
+    font-size: 32px;
+}
+
+.seccion_central_instrucciones{
+    display: flex;
+    gap: 8px;
+}
+
+.seccion_derecha{
+    background-color: skyblue;
+}
